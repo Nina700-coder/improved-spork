@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lucky Step — Every step forward to self-growth. Plan personalized walking routes tailored to your daily step goals, explore scenic paths, and listen to curated educational podcasts on the go.">
+  <meta name="keywords" content="Lucky Step, walking route planner, step goal calculator, healthmaxxing, walking podcasts, stride length, daily steps">
+  <meta name="author" content="Lucky Step Team">
+  <meta name="theme-color" content="#10B981">
+  <title>Lucky Step — Every step forward to self-growth</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans for modern clean startup feel -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HEADER & NAVIGATION BAR
+       ============================================================ -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo" aria-label="Lucky Step Home">
+        <span class="logo-icon-wrap" aria-hidden="true">
+          <!-- Stylized compass / walking route icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="logo-svg">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" fill-opacity="0.25"></polygon>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor"></circle>
+          </svg>
+        </span>
+        <span class="logo-text">Lucky<span class="logo-accent">Step</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active" data-i18n="nav_home">Home</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">About Concept</a></li>
+          <li><a href="#planner" class="nav-link" data-i18n="nav_planner">Route Planner</a></li>
+          <li><a href="#features" class="nav-link" data-i18n="nav_features">Features</a></li>
+          <li><a href="#health" class="nav-link" data-i18n="nav_health">Health Benefits</a></li>
+          <li><a href="#podcasts" class="nav-link" data-i18n="nav_podcasts">Podcasts</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action items: Language toggle & CTA -->
+      <div class="header-actions">
+        <!-- Language Switcher (EN / KA) -->
+        <button type="button" class="lang-toggle-btn" id="langToggle" aria-label="Switch Language (English / Georgian)">
+          <span class="lang-flag" id="langFlag">🇬🇪</span>
+          <span class="lang-code" id="langLabel">ქარ</span>
+        </button>
+
+        <!-- Primary CTA in Header -->
+        <a href="#planner" class="btn btn-primary btn-sm header-cta" data-i18n="btn_plan_my_walk">
+          <span>Plan My Walk</span>
+          <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ============================================================
+         1. HERO SECTION
+         ============================================================ -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-title">
+      <!-- Decorative ambient gradient shapes -->
+      <div class="ambient-glow ambient-glow-1" aria-hidden="true"></div>
+      <div class="ambient-glow ambient-glow-2" aria-hidden="true"></div>
+      <div class="hero-map-grid" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-pulse"></span>
+            <span class="badge-text" data-i18n="hero_badge">Smarter Daily Habits • Active Walking</span>
+          </div>
+
+          <h1 class="hero-title" id="hero-title">
+            <span class="hero-title-highlight" data-i18n="hero_title_line">every step forward to self-growth</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Lucky Step helps you plan walking routes tailored to your daily step goals, while discovering new places and learning on the go with curated educational podcasts.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#planner" class="btn btn-primary btn-lg" id="heroPlanWalkBtn" data-i18n="btn_plan_my_walk">
+              <span>Plan My Walk</span>
+              <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            <a href="#about" class="btn btn-secondary btn-lg" data-i18n="btn_learn_more">
+              <span>Explore How It Works</span>
+            </a>
+          </div>
+
+          <!-- Quick Proof Metrics -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-number">14,200+</span>
+              <span class="metric-label" data-i18n="metric_walks">Routes Optimized</span>
+            </div>
+            <div class="metric-divider" aria-hidden="true"></div>
+            <div class="metric-item">
+              <span class="metric-number">98.4%</span>
+              <span class="metric-label" data-i18n="metric_goal_hit">Daily Goals Achieved</span>
+            </div>
+            <div class="metric-divider" aria-hidden="true"></div>
+            <div class="metric-item">
+              <span class="metric-number">650+ hrs</span>
+              <span class="metric-label" data-i18n="metric_audio">Curated Audio Lessons</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Interactive Visual Card / Route Simulation Showcase -->
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <!-- Main Live Route Card -->
+            <div class="route-mockup-card glass-card">
+              <div class="mockup-header">
+                <div class="mockup-badge">
+                  <span class="dot-indicator pulse"></span>
+                  <span data-i18n="mockup_live_active">Active Route Simulation</span>
+                </div>
+                <div class="mockup-route-tag" data-i18n="mockup_tag_scenic">Scenic Green Path</div>
+              </div>
+
+              <!-- Route points summary -->
+              <div class="mockup-locations">
+                <div class="mockup-loc">
+                  <div class="loc-bullet start-bullet" aria-hidden="true"></div>
+                  <div>
+                    <span class="loc-label" data-i18n="label_start">Start point</span>
+                    <strong class="loc-val" id="mockupStartVal">Freedom Square</strong>
+                  </div>
+                </div>
+                <div class="mockup-loc-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                  </svg>
+                </div>
+                <div class="mockup-loc">
+                  <div class="loc-bullet end-bullet" aria-hidden="true"></div>
+                  <div>
+                    <span class="loc-label" data-i18n="label_destination">Destination</span>
+                    <strong class="loc-val" id="mockupEndVal">Vake Park & Lake</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Animated Mini SVG Map -->
+              <div class="mockup-map-box">
+                <svg class="mockup-map-svg" viewBox="0 0 380 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Route map preview">
+                  <!-- Subtle map grid lines -->
+                  <path d="M0 45 H380 M0 90 H380 M0 135 H380" stroke="rgba(16, 185, 129, 0.08)" stroke-width="1" />
+                  <path d="M75 0 V180 M160 0 V180 M245 0 V180 M330 0 V180" stroke="rgba(16, 185, 129, 0.08)" stroke-width="1" />
+                  
+                  <!-- Park & water contour outlines -->
+                  <path d="M20 120 C 50 110, 80 140, 110 130 C 140 120, 150 155, 180 150 C 210 145, 230 165, 260 160" stroke="#E2E8F0" stroke-width="1.5" stroke-dasharray="4 4" />
+                  <rect x="260" y="25" width="85" height="55" rx="8" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+                  <text x="302" y="55" font-size="10" fill="#059669" text-anchor="middle" font-weight="600">Green Park</text>
+
+                  <!-- Secondary roads -->
+                  <path d="M30 40 L350 40" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+                  <path d="M120 20 L120 160" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+                  <path d="M230 30 L230 170" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+
+                  <!-- Main Route Walking Path (Animated stroke) -->
+                  <path id="heroRoutePath" d="M 45 130 C 90 125, 110 60, 155 70 C 190 80, 210 135, 250 120 C 285 105, 305 60, 335 48" 
+                        stroke="url(#routeGradient)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="animated-route-path" />
+
+                  <!-- Route step milestones -->
+                  <circle cx="155" cy="70" r="4" fill="#10B981" />
+                  <circle cx="250" cy="120" r="4" fill="#10B981" />
+
+                  <!-- Start Pin -->
+                  <g transform="translate(45, 130)">
+                    <circle r="9" fill="#10B981" fill-opacity="0.25" class="pulse-ring"></circle>
+                    <circle r="5" fill="#047857"></circle>
+                    <circle r="2" fill="#FFFFFF"></circle>
+                  </g>
+
+                  <!-- End Destination Pin -->
+                  <g transform="translate(335, 48)">
+                    <circle r="9" fill="#0284C7" fill-opacity="0.25" class="pulse-ring"></circle>
+                    <circle r="5" fill="#0284C7"></circle>
+                    <circle r="2" fill="#FFFFFF"></circle>
+                  </g>
+
+                  <defs>
+                    <linearGradient id="routeGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#10B981" />
+                      <stop offset="50%" stop-color="#06B6D4" />
+                      <stop offset="100%" stop-color="#0284C7" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+
+              <!-- Live calculated stats on the card -->
+              <div class="mockup-stats-grid">
+                <div class="mockup-stat-cell">
+                  <span class="stat-cell-label" data-i18n="stat_daily_goal">Step Goal</span>
+                  <div class="stat-cell-value">
+                    <span class="stat-num" id="heroStepsDisplay">7,500</span>
+                    <span class="stat-unit" data-i18n="unit_steps">steps</span>
+                  </div>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar-fill" style="width: 75%;"></div>
+                  </div>
+                </div>
+
+                <div class="mockup-stat-cell">
+                  <span class="stat-cell-label" data-i18n="stat_est_distance">Est. Distance</span>
+                  <div class="stat-cell-value">
+                    <span class="stat-num" id="heroDistKm">5.70</span>
+                    <span class="stat-unit">km</span>
+                  </div>
+                  <div class="stat-subtext" id="heroDistMeters">5,700 meters</div>
+                </div>
+
+                <div class="mockup-stat-cell">
+                  <span class="stat-cell-label" data-i18n="stat_est_time">Est. Walk Time</span>
+                  <div class="stat-cell-value">
+                    <span class="stat-num">~68</span>
+                    <span class="stat-unit" data-i18n="unit_min">min</span>
+                  </div>
+                  <div class="stat-subtext">@ 5.0 km/h pace</div>
+                </div>
+              </div>
+
+              <!-- Audio Learning Bar preview in Hero -->
+              <div class="mockup-audio-pill">
+                <div class="audio-pill-icon" aria-hidden="true">
+                  <div class="audio-wave"><span></span><span></span><span></span><span></span></div>
+                </div>
+                <div class="audio-pill-info">
+                  <span class="audio-tag" data-i18n="podcast_now_playing">Synced Audio Lesson</span>
+                  <strong class="audio-name">The Neuroscience of Daily Walking</strong>
+                </div>
+                <span class="audio-duration-badge">28 min</span>
+              </div>
+            </div>
+
+            <!-- Floating Accent Badge 1: Health Streak -->
+            <div class="floating-badge badge-top-right glass-card">
+              <span class="badge-emoji" aria-hidden="true">🔥</span>
+              <div>
+                <strong class="floating-title">14-Day Streak</strong>
+                <span class="floating-sub" data-i18n="streak_healthmax">Consistent Habits</span>
+              </div>
+            </div>
+
+            <!-- Floating Accent Badge 2: Stride Precision Note -->
+            <div class="floating-badge badge-bottom-left glass-card">
+              <span class="badge-emoji" aria-hidden="true">📏</span>
+              <div>
+                <strong class="floating-title" data-i18n="badge_stride_title">Stride Calibrated</strong>
+                <span class="floating-sub" data-i18n="badge_stride_sub">0.76m avg. baseline</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. ABOUT SECTION (Concept, Stride Note & Interactive Route Tool)
+         ============================================================ -->
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center">
+          <span class="section-tag" data-i18n="about_tag">About Lucky Step</span>
+          <h2 class="section-title" id="about-title" data-i18n="about_title">
+            Transforming Ordinary Commutes Into Empowering Journeys
+          </h2>
+          <p class="section-desc" data-i18n="about_desc">
+            Standard navigation always forces the quickest, shortest commute. Lucky Step flips the script: enter where you are, where you want to go, and how many steps you wish to walk today. We design a smart, scenic route that fits your personal movement aspirations.
+          </p>
+        </div>
+
+        <!-- Concept Pillars (3-Column Flow) -->
+        <div class="concept-flow-grid">
+          <!-- Step 1 -->
+          <div class="concept-card glass-card">
+            <div class="concept-num">01</div>
+            <div class="concept-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <h3 class="concept-heading" data-i18n="concept_step1_title">Enter Your Waypoints</h3>
+            <p class="concept-text" data-i18n="concept_step1_text">
+              Specify your starting location, final destination, and your target step goal (e.g. 5,000, 8,000, or 10,000+ steps).
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="concept-card glass-card">
+            <div class="concept-num">02</div>
+            <div class="concept-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                <line x1="9" y1="3" x2="9" y2="18"></line>
+                <line x1="15" y1="6" x2="15" y2="21"></line>
+              </svg>
+            </div>
+            <h3 class="concept-heading" data-i18n="concept_step2_title">Smart Route Generation</h3>
+            <p class="concept-text" data-i18n="concept_step2_text">
+              Our algorithm weaves through vibrant parks, pedestrian lanes, and scenic paths to match your daily step target accurately.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="concept-card glass-card">
+            <div class="concept-num">03</div>
+            <div class="concept-icon-box" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              </svg>
+            </div>
+            <h3 class="concept-heading" data-i18n="concept_step3_title">Walk, Learn & Thrive</h3>
+            <p class="concept-text" data-i18n="concept_step3_text">
+              Track your distance in kilometers and meters, listen to insightful audio tracks, and hit your self-growth objectives effortlessly.
+            </p>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             RESPONSIBLE SCIENCE & STRIDE LENGTH DISCLAIMER
+             ============================================================ -->
+        <div class="stride-callout-banner">
+          <div class="callout-icon-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <div class="callout-content">
+            <h4 class="callout-title" data-i18n="disclaimer_title">Scientific Transparency: How Step Calculations Work</h4>
+            <p class="callout-desc" data-i18n="disclaimer_body">
+              <strong>Individual Stride Length Matters:</strong> A human stride length is directly influenced by height, walking cadence, and terrain incline (typically varying between 0.65m and 0.85m). For this reason, distance and step predictions in Lucky Step are <em>reliable mathematical estimates</em> calibrated to an average stride length of <strong>0.76 meters</strong>. You can fine-tune your custom stride length in our planner below for enhanced accuracy!
+            </p>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             INTERACTIVE ROUTE & DISTANCE PLANNER TOOL
+             ============================================================ -->
+        <div class="planner-wrapper" id="planner">
+          <div class="planner-box glass-card">
+            <div class="planner-topbar">
+              <div>
+                <span class="planner-badge" data-i18n="planner_badge">Interactive Sandbox</span>
+                <h3 class="planner-title" data-i18n="planner_tool_title">Plan Your Walking Route & Estimate Distance</h3>
+              </div>
+              <div class="planner-unit-selector">
+                <span class="unit-tip" data-i18n="planner_live_feedback">Real-time km &amp; meter conversion</span>
+              </div>
+            </div>
+
+            <div class="planner-grid">
+              <!-- Left Form Column -->
+              <form class="planner-form" id="routePlannerForm" onsubmit="return false;" novalidate>
+                <!-- Start Point -->
+                <div class="form-group">
+                  <label for="startPoint" class="form-label">
+                    <span class="field-icon" aria-hidden="true">📍</span>
+                    <span data-i18n="form_start_label">Starting Location</span>
+                  </label>
+                  <div class="input-with-action">
+                    <input type="text" id="startPoint" class="form-control" placeholder="e.g. Liberty Square, City Center" value="Liberty Square, Center" required>
+                    <button type="button" class="btn-input-preset" id="presetStartBtn" title="Set to Current GPS Location">
+                      <span aria-hidden="true">🎯</span>
+                    </button>
+                  </div>
+                  <div class="quick-chips">
+                    <button type="button" class="chip-btn" data-target="startPoint" data-val="Old Town Square">Old Town</button>
+                    <button type="button" class="chip-btn" data-target="startPoint" data-val="University Campus">Campus</button>
+                    <button type="button" class="chip-btn" data-target="startPoint" data-val="Central Station">Station</button>
+                  </div>
+                </div>
+
+                <!-- Destination -->
+                <div class="form-group">
+                  <label for="destPoint" class="form-label">
+                    <span class="field-icon" aria-hidden="true">🏁</span>
+                    <span data-i18n="form_dest_label">Destination Location</span>
+                  </label>
+                  <div class="input-with-action">
+                    <input type="text" id="destPoint" class="form-control" placeholder="e.g. Botanical Gardens, Tech Hub" value="Botanical Gardens & Viewpoint" required>
+                  </div>
+                  <div class="quick-chips">
+                    <button type="button" class="chip-btn" data-target="destPoint" data-val="Riverside Boulevard">Riverside</button>
+                    <button type="button" class="chip-btn" data-target="destPoint" data-val="Mountain Park">Mountain Park</button>
+                    <button type="button" class="chip-btn" data-target="destPoint" data-val="City Library">Library</button>
+                  </div>
+                </div>
+
+                <!-- Step Goal Slider -->
+                <div class="form-group">
+                  <div class="label-with-val">
+                    <label for="stepGoalRange" class="form-label">
+                      <span class="field-icon" aria-hidden="true">👟</span>
+                      <span data-i18n="form_steps_label">Target Daily Steps</span>
+                    </label>
+                    <span class="badge-value" id="stepGoalDisplay">7,500 steps</span>
+                  </div>
+                  <input type="range" id="stepGoalRange" min="2000" max="25000" step="500" value="7500" class="range-slider" aria-valuemin="2000" aria-valuemax="25000" aria-valuenow="7500">
+                  <div class="range-ticks">
+                    <span>3k (Quick)</span>
+                    <span>7.5k (Optimal)</span>
+                    <span>10k (Active)</span>
+                    <span>15k+ (Hero)</span>
+                  </div>
+                </div>
+
+                <!-- Stride Length Calibration (Foldable / Customizable) -->
+                <div class="stride-config-section">
+                  <button type="button" class="stride-accordion-btn" id="strideAccordionBtn" aria-expanded="false" aria-controls="strideConfigBody">
+                    <span>⚙️ <strong data-i18n="stride_custom_title">Fine-tune Stride Length</strong> (<span id="currentStrideLabel">0.76m - Standard</span>)</span>
+                    <svg class="chevron-icon" viewBox="0 0 20 20" fill="currentColor" width="16" height="16">
+                      <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                  <div class="stride-config-body" id="strideConfigBody" hidden>
+                    <p class="stride-hint" data-i18n="stride_calc_hint">
+                      Average stride is roughly height × 0.415 for men and height × 0.413 for women. Adjust if you know your exact measurement:
+                    </p>
+                    <div class="stride-presets">
+                      <button type="button" class="stride-preset-btn" data-stride="0.67">Shorter (0.67m)</button>
+                      <button type="button" class="stride-preset-btn active" data-stride="0.76">Average (0.76m)</button>
+                      <button type="button" class="stride-preset-btn" data-stride="0.84">Taller (0.84m)</button>
+                    </div>
+                    <div class="custom-stride-slider">
+                      <label for="strideSlider" class="sub-label">Custom Stride: <strong id="customStrideVal">0.76 m</strong></label>
+                      <input type="range" id="strideSlider" min="0.55" max="1.00" step="0.01" value="0.76" class="range-slider">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit / Calculate Button -->
+                <button type="button" class="btn btn-primary btn-block" id="calcRouteBtn" data-i18n="btn_calc_route">
+                  <span>✨ Calculate My Custom Route</span>
+                </button>
+              </form>
+
+              <!-- Right Results & Interactive Visual Column -->
+              <div class="planner-results">
+                <!-- Result KPI Cards -->
+                <div class="results-kpi-row">
+                  <div class="kpi-card">
+                    <span class="kpi-label" data-i18n="kpi_distance_km">Total Distance (km)</span>
+                    <strong class="kpi-value text-primary" id="kpiDistKm">5.70 <small>km</small></strong>
+                    <span class="kpi-sub" id="kpiDistMeters">5,700 meters</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-label" data-i18n="kpi_est_time">Estimated Time</span>
+                    <strong class="kpi-value" id="kpiTime">1h 08m</strong>
+                    <span class="kpi-sub" data-i18n="kpi_pace_sub">Brisk 5 km/h walk</span>
+                  </div>
+
+                  <div class="kpi-card">
+                    <span class="kpi-label" data-i18n="kpi_energy">Energy Burn</span>
+                    <strong class="kpi-value text-accent" id="kpiCalories">~285 <small>kcal</small></strong>
+                    <span class="kpi-sub" data-i18n="kpi_neat_sub">Metabolic NEAT burn</span>
+                  </div>
+                </div>
+
+                <!-- Route Options Tabs (Scenic vs Direct vs Parks) -->
+                <div class="route-variant-tabs">
+                  <span class="variant-label" data-i18n="route_path_choice">Suggested Paths:</span>
+                  <div class="variant-btn-group" role="tablist">
+                    <button type="button" class="variant-btn active" data-variant="scenic" role="tab" aria-selected="true" data-i18n="path_scenic">🌿 Scenic Greenery Loop</button>
+                    <button type="button" class="variant-btn" data-variant="urban" role="tab" aria-selected="false" data-i18n="path_urban">🏛️ Cultural &amp; Landmarks</button>
+                    <button type="button" class="variant-btn" data-variant="fitness" role="tab" aria-selected="false" data-i18n="path_fitness">⚡ Gradient Hill Detour</button>
+                  </div>
+                </div>
+
+                <!-- Simulated Interactive Route Canvas/SVG -->
+                <div class="interactive-map-preview" id="mapPreviewBox">
+                  <div class="map-overlay-info">
+                    <span class="map-route-title" id="mapRouteTitle">Selected: Scenic Greenery Loop</span>
+                    <span class="map-route-tag" id="mapRouteStepsTag">7,500 Steps Target</span>
+                  </div>
+
+                  <svg class="planner-map-svg" viewBox="0 0 500 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Interactive route visualization">
+                    <!-- City Terrain Mockup -->
+                    <rect width="500" height="220" fill="#F8FAFC" />
+                    <!-- River / Nature Shape -->
+                    <path d="M0 160 Q 150 180 250 130 T 500 140" stroke="#BAE6FD" stroke-width="24" stroke-linecap="round" fill="none" opacity="0.45" />
+                    <!-- Parks -->
+                    <rect x="60" y="30" width="100" height="60" rx="12" fill="#DCFCE7" opacity="0.7" />
+                    <text x="110" y="65" font-size="11" fill="#15803D" font-weight="600" text-anchor="middle">Botanical Park</text>
+                    
+                    <rect x="330" y="40" width="120" height="65" rx="12" fill="#DCFCE7" opacity="0.7" />
+                    <text x="390" y="78" font-size="11" fill="#15803D" font-weight="600" text-anchor="middle">City Gardens</text>
+
+                    <!-- Base City Grid -->
+                    <path d="M50 0 V220 M150 0 V220 M250 0 V220 M350 0 V220 M450 0 V220" stroke="#E2E8F0" stroke-width="1.2" stroke-dasharray="3 3" />
+                    <path d="M0 50 H500 M0 110 H500 M0 170 H500" stroke="#E2E8F0" stroke-width="1.2" stroke-dasharray="3 3" />
+
+                    <!-- Dynamic SVG Path that updates via JavaScript -->
+                    <path id="plannerSvgPath" d="M 50 175 C 90 90, 140 50, 210 90 C 270 120, 310 40, 420 70" 
+                          stroke="url(#plannerPathGradient)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" class="planner-route-line" />
+
+                    <!-- Waypoint markers -->
+                    <g id="wpStart" transform="translate(50, 175)">
+                      <circle r="12" fill="#10B981" fill-opacity="0.25" class="pulse-ring"></circle>
+                      <circle r="6" fill="#059669"></circle>
+                      <circle r="2.5" fill="#FFFFFF"></circle>
+                      <text x="-5" y="-12" font-size="10" font-weight="700" fill="#0F172A">Start</text>
+                    </g>
+
+                    <g id="wpMid1" transform="translate(210, 90)">
+                      <circle r="4" fill="#0284C7"></circle>
+                      <text x="0" y="16" font-size="9" font-weight="600" fill="#64748B" text-anchor="middle">3,500 Steps</text>
+                    </g>
+
+                    <g id="wpEnd" transform="translate(420, 70)">
+                      <circle r="12" fill="#0284C7" fill-opacity="0.25" class="pulse-ring"></circle>
+                      <circle r="6" fill="#0284C7"></circle>
+                      <circle r="2.5" fill="#FFFFFF"></circle>
+                      <text x="5" y="-12" font-size="10" font-weight="700" fill="#0F172A">Destination</text>
+                    </g>
+
+                    <defs>
+                      <linearGradient id="plannerPathGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#10B981" />
+                        <stop offset="60%" stop-color="#06B6D4" />
+                        <stop offset="100%" stop-color="#3B82F6" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+
+                  <div class="map-footer-note">
+                    <span class="note-icon" aria-hidden="true">💡</span>
+                    <span id="plannerLiveDisclaimer" data-i18n="planner_disclaimer_note">
+                      Estimated based on an average 0.76m stride length. Exact step count varies with your unique gait and elevation changes.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============================================================
+             RESPONSIBLE FACT-BASED HEALTH BENEFITS SECTION
+             ============================================================ -->
+        <div class="health-benefits-block" id="health">
+          <div class="text-center section-header">
+            <span class="section-tag" data-i18n="health_tag">Evidence-Based Wellness</span>
+            <h3 class="section-title" data-i18n="health_title">The Proven Science of Regular Walking</h3>
+            <p class="section-desc" data-i18n="health_desc">
+              Walking is one of the most accessible, low-impact, and scientifically validated forms of preventive healthcare. Here is how daily purposeful steps elevate your longevity and mental performance.
+            </p>
+          </div>
+
+          <div class="health-cards-grid">
+            <!-- Health Benefit 1 -->
+            <article class="health-card glass-card">
+              <div class="health-card-header">
+                <span class="health-icon" aria-hidden="true">🫀</span>
+                <span class="health-stat-pill">-25% to -30%</span>
+              </div>
+              <h4 class="health-card-title" data-i18n="health_card1_title">Cardiovascular Resilience</h4>
+              <p class="health-card-text" data-i18n="health_card1_text">
+                Regular walking promotes arterial elasticity, lowers resting blood pressure, and significantly reduces long-term coronary risk through steady, sustained Zone 2 circulation.
+              </p>
+            </article>
+
+            <!-- Health Benefit 2 -->
+            <article class="health-card glass-card">
+              <div class="health-card-header">
+                <span class="health-icon" aria-hidden="true">🧠</span>
+                <span class="health-stat-pill">+35% BDNF</span>
+              </div>
+              <h4 class="health-card-title" data-i18n="health_card2_title">Cognitive Clarity & Neurogenesis</h4>
+              <p class="health-card-text" data-i18n="health_card2_text">
+                Physical motion stimulates Brain-Derived Neurotrophic Factor (BDNF), enhancing memory consolidation, creative ideation, and mental resilience during stressful days.
+              </p>
+            </article>
+
+            <!-- Health Benefit 3 -->
+            <article class="health-card glass-card">
+              <div class="health-card-header">
+                <span class="health-icon" aria-hidden="true">☀️</span>
+                <span class="health-stat-pill">Circadian Reset</span>
+              </div>
+              <h4 class="health-card-title" data-i18n="health_card3_title">Natural Circadian Alignment</h4>
+              <p class="health-card-text" data-i18n="health_card3_text">
+                Walking outdoors exposes your retinal ganglion cells to natural daylight, naturally timing cortisol release in the morning and promoting deep, restorative sleep at night.
+              </p>
+            </article>
+
+            <!-- Health Benefit 4 -->
+            <article class="health-card glass-card">
+              <div class="health-card-header">
+                <span class="health-icon" aria-hidden="true">⚡</span>
+                <span class="health-stat-pill">NEAT Boost</span>
+              </div>
+              <h4 class="health-card-title" data-i18n="health_card4_title">Metabolic Longevity & NEAT</h4>
+              <p class="health-card-text" data-i18n="health_card4_text">
+                Non-Exercise Activity Thermogenesis (NEAT) accounts for the largest fraction of daily metabolic expenditure, supporting glucose regulation without the high cortisol spikes of extreme workouts.
+              </p>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. FEATURES SECTION (EXACTLY 3 MODERN FEATURE CARDS)
+         ============================================================ -->
+    <section class="features-section" id="features" aria-labelledby="features-title">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag" data-i18n="features_tag">Platform Pillars</span>
+          <h2 class="section-title" id="features-title" data-i18n="features_title">
+            Engineered For Mindful Movement &amp; Intellectual Growth
+          </h2>
+          <p class="section-desc" data-i18n="features_desc">
+            Three core features thoughtfully built to help you reach your physical goals while enriching your mind every single day.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          
+          <!-- FEATURE CARD 1: "Proper Walking Routes" -->
+          <article class="feature-card glass-card" id="feature-routes">
+            <div class="feature-card-inner">
+              <div class="feature-badge">
+                <span class="feature-icon" aria-hidden="true">🗺️</span>
+                <span class="feature-number">01</span>
+              </div>
+              <h3 class="feature-title" data-i18n="feature1_title">Proper Walking Routes</h3>
+              <p class="feature-desc" data-i18n="feature1_desc">
+                Users simply enter their starting point, destination, and daily step goal. Lucky Step generates optimized walking routes with precise estimated distance in kilometers, meters, and expected step count.
+              </p>
+
+              <!-- Interactive Feature 1 Widget: Route Filter Comparison -->
+              <div class="feature-interactive-box">
+                <div class="feature-mini-nav">
+                  <button type="button" class="mini-tab-btn active" data-route-type="standard" data-i18n="tab_direct">Direct</button>
+                  <button type="button" class="mini-tab-btn" data-route-type="balanced" data-i18n="tab_balanced">Balanced</button>
+                  <button type="button" class="mini-tab-btn" data-route-type="extended" data-i18n="tab_step_boost">Step Boost</button>
+                </div>
+
+                <div class="route-preview-details" id="routePreviewDetails">
+                  <div class="route-detail-row">
+                    <span class="route-detail-label" data-i18n="detail_route_name">Suggested Path:</span>
+                    <strong class="route-detail-val" id="featRouteName">Parkside Detour &amp; Promenade</strong>
+                  </div>
+                  <div class="route-metrics-bar">
+                    <div class="r-metric">
+                      <span class="r-metric-num" id="featRouteKm">5.4 km</span>
+                      <span class="r-metric-unit" id="featRouteM">(5,400 m)</span>
+                    </div>
+                    <div class="r-metric-divider"></div>
+                    <div class="r-metric">
+                      <span class="r-metric-num" id="featRouteSteps">~7,100</span>
+                      <span class="r-metric-unit" data-i18n="unit_steps">steps</span>
+                    </div>
+                    <div class="r-metric-divider"></div>
+                    <div class="r-metric">
+                      <span class="r-metric-num" id="featRouteMin">~64 min</span>
+                      <span class="r-metric-unit">duration</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="feature-card-note">
+                  <span class="note-bullet" aria-hidden="true">✓</span>
+                  <span data-i18n="feature1_bullet">Sidewalk safety, green tree canopy, and low pollution scoring included.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- FEATURE CARD 2: "Collect Knowledge While Walking" -->
+          <article class="feature-card glass-card" id="podcasts">
+            <div class="feature-card-inner">
+              <div class="feature-badge">
+                <span class="feature-icon" aria-hidden="true">🎧</span>
+                <span class="feature-number">02</span>
+              </div>
+              <h3 class="feature-title" data-i18n="feature2_title">Collect Knowledge While Walking</h3>
+              <p class="feature-desc" data-i18n="feature2_desc">
+                Curated educational podcast recommendations and learning categories that sync directly with your walking duration. Feed your curiosity while stepping towards your daily movement milestone.
+              </p>
+
+              <!-- Interactive Feature 2 Widget: Podcast Audio Player Demo -->
+              <div class="feature-interactive-box podcast-widget">
+                <!-- Podcast Category Selector -->
+                <div class="podcast-categories">
+                  <button type="button" class="pod-chip active" data-pod-index="0">🧠 Neuroscience</button>
+                  <button type="button" class="pod-chip" data-pod-index="1">🚀 Tech &amp; AI</button>
+                  <button type="button" class="pod-chip" data-pod-index="2">🏛️ Philosophy</button>
+                  <button type="button" class="pod-chip" data-pod-index="3">🌿 Habit Systems</button>
+                </div>
+
+                <!-- Active Podcast Card -->
+                <div class="podcast-player-card">
+                  <div class="player-top">
+                    <div class="pod-artwork" aria-hidden="true">
+                      <span id="podArtEmoji">🧬</span>
+                    </div>
+                    <div class="pod-meta">
+                      <span class="pod-category" id="podCategory">Science &amp; Physiology</span>
+                      <strong class="pod-title" id="podTitle">The Biology of Walking &amp; Deep Focus</strong>
+                      <span class="pod-host" id="podHost">Lucky Step Curated Audio • 24 min walk</span>
+                    </div>
+                  </div>
+
+                  <!-- Visualizer Audio Waves -->
+                  <div class="audio-visualizer" id="audioVisualizer" aria-hidden="true">
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                  </div>
+
+                  <!-- Player Controls -->
+                  <div class="player-controls">
+                    <button type="button" class="pod-ctrl-btn" id="podPlayBtn" aria-label="Play or Pause sample audio episode">
+                      <svg class="icon-play" id="iconPlay" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                      </svg>
+                      <svg class="icon-pause" id="iconPause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display:none;">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                      </svg>
+                    </button>
+
+                    <div class="pod-scrubber-wrap">
+                      <div class="pod-progress-bar">
+                        <div class="pod-progress-fill" id="podProgressFill" style="width: 32%;"></div>
+                      </div>
+                      <div class="pod-time-row">
+                        <span id="podCurrentTime">07:42</span>
+                        <span id="podTotalDuration">24:00</span>
+                      </div>
+                    </div>
+
+                    <div class="pod-speed-selector">
+                      <button type="button" class="speed-toggle" id="speedToggle">1.0x</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="feature-card-note">
+                  <span class="note-bullet" aria-hidden="true">💡</span>
+                  <span data-i18n="feature2_bullet">Episodes automatically suggested to match your route’s exact duration.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- FEATURE CARD 3: "Walking + Healthmaxxing" -->
+          <article class="feature-card glass-card" id="feature-healthmax">
+            <div class="feature-card-inner">
+              <div class="feature-badge">
+                <span class="feature-icon" aria-hidden="true">⚡</span>
+                <span class="feature-number">03</span>
+              </div>
+              <h3 class="feature-title" data-i18n="feature3_title">Walking + Healthmaxxing</h3>
+              <p class="feature-desc" data-i18n="feature3_desc">
+                Educational insights into regular walking, daily movement optimization, and healthy habit architecture. Optimize posture, metabolic rate, and longevity without strenuous gym burnout.
+              </p>
+
+              <!-- Interactive Feature 3 Widget: Healthmaxxing Impact Checklist -->
+              <div class="feature-interactive-box healthmax-box">
+                <div class="healthmax-header">
+                  <strong data-i18n="healthmax_checklist_title">Daily Movement Multipliers</strong>
+                  <span class="score-pill" id="healthmaxScore">4 / 4 Active</span>
+                </div>
+
+                <ul class="healthmax-checklist">
+                  <li class="check-item active">
+                    <span class="check-box" aria-hidden="true">✓</span>
+                    <div>
+                      <strong data-i18n="check1_title">Zone 2 Cardiovascular Base</strong>
+                      <p data-i18n="check1_text">Sustained steady aerobic pace boosts mitochondrial efficiency.</p>
+                    </div>
+                  </li>
+                  <li class="check-item active">
+                    <span class="check-box" aria-hidden="true">✓</span>
+                    <div>
+                      <strong data-i18n="check2_title">Circadian Sunlight Anchor</strong>
+                      <p data-i18n="check2_text">10–20 mins of natural light exposure anchors sleep latency.</p>
+                    </div>
+                  </li>
+                  <li class="check-item active">
+                    <span class="check-box" aria-hidden="true">✓</span>
+                    <div>
+                      <strong data-i18n="check3_title">Zero-Impact Joint Decompression</strong>
+                      <p data-i18n="check3_text">Promotes synovial fluid circulation with minimal spinal stress.</p>
+                    </div>
+                  </li>
+                  <li class="check-item active">
+                    <span class="check-box" aria-hidden="true">✓</span>
+                    <div>
+                      <strong data-i18n="check4_title">Mental Reset &amp; Cortisol Drain</strong>
+                      <p data-i18n="check4_text">Bilateral visual stimulation gently calms the amygdala.</p>
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="feature-card-note">
+                  <span class="note-bullet" aria-hidden="true">⚡</span>
+                  <span data-i18n="feature3_bullet">Compound habits: 7,500 daily steps equal over 2,700,000 steps annually.</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. CONTACT SECTION
+         ============================================================ -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        
+        <div class="contact-card-wrapper glass-card">
+          <div class="contact-grid">
+            
+            <!-- Left Info Panel -->
+            <div class="contact-info-panel">
+              <span class="section-tag" data-i18n="contact_tag">Get In Touch</span>
+              <h2 class="contact-title" id="contact-title" data-i18n="contact_title">
+                Ready To Step Into Your Self-Growth?
+              </h2>
+              <p class="contact-desc" data-i18n="contact_desc">
+                Have questions about our step estimation algorithm, podcast suggestions, or partnership opportunities? Send us a message and our team will get back to you promptly.
+              </p>
+
+              <div class="contact-details">
+                <div class="contact-detail-item">
+                  <span class="detail-icon" aria-hidden="true">📬</span>
+                  <div>
+                    <span class="detail-label" data-i18n="contact_label_email">Direct Email</span>
+                    <strong class="detail-val">support@luckystep.walk</strong>
+                  </div>
+                </div>
+
+                <div class="contact-detail-item">
+                  <span class="detail-icon" aria-hidden="true">📍</span>
+                  <div>
+                    <span class="detail-label" data-i18n="contact_label_loc">Headquarters</span>
+                    <strong class="detail-val">Tbilisi, Georgia &amp; Global Remote</strong>
+                  </div>
+                </div>
+
+                <div class="contact-detail-item">
+                  <span class="detail-icon" aria-hidden="true">🌐</span>
+                  <div>
+                    <span class="detail-label" data-i18n="contact_label_community">Walker Community</span>
+                    <strong class="detail-val">Join 14,000+ mindful daily walkers</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Mini FAQ preview -->
+              <div class="contact-faq-box">
+                <h4 class="faq-box-title" data-i18n="faq_quick_title">Frequently Asked:</h4>
+                <p class="faq-item" data-i18n="faq_q1">
+                  <strong>Q: Are step calculations exact?</strong><br>
+                  A: They are calibrated estimates (~0.76m stride standard) until you input your personal stride length.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right Contact Form -->
+            <div class="contact-form-panel">
+              <form class="contact-form" id="contactForm" novalidate>
+                
+                <!-- Success / Error Toast notification banner (hidden by default) -->
+                <div class="form-feedback-alert" id="formFeedbackAlert" role="alert" aria-live="polite" hidden>
+                  <span class="feedback-icon" id="feedbackIcon">✓</span>
+                  <div class="feedback-text" id="feedbackText">Thank you! Your message has been sent.</div>
+                </div>
+
+                <!-- Name Field -->
+                <div class="form-group">
+                  <label for="contactName" class="form-label" data-i18n="form_name_label">
+                    Your Name <span class="required-star">*</span>
+                  </label>
+                  <input type="text" id="contactName" name="name" class="form-control" placeholder="e.g. Alex Morgan" required autocomplete="name">
+                  <span class="error-msg" id="nameError" aria-live="polite"></span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label" data-i18n="form_email_label">
+                    Email Address <span class="required-star">*</span>
+                  </label>
+                  <input type="email" id="contactEmail" name="email" class="form-control" placeholder="e.g. alex@example.com" required autocomplete="email">
+                  <span class="error-msg" id="emailError" aria-live="polite"></span>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label" data-i18n="form_msg_label">
+                    Message <span class="required-star">*</span>
+                  </label>
+                  <textarea id="contactMessage" name="message" class="form-control textarea-field" rows="4" placeholder="Tell us about your walking goals, feedback, or inquiries..." required></textarea>
+                  <span class="error-msg" id="messageError" aria-live="polite"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-block btn-send" id="sendMsgBtn">
+                  <span id="sendBtnText" data-i18n="btn_send_message">Send Message</span>
+                  <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor" width="16" height="16" aria-hidden="true">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                  </svg>
+                </button>
+
+                <p class="form-privacy-note" data-i18n="privacy_note">
+                  🔒 We respect your privacy. No spam, ever. Your information remains strictly confidential.
+                </p>
+              </form>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo footer-logo">
+            <span class="logo-icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" class="logo-svg">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" fill-opacity="0.25"></polygon>
+              </svg>
+            </span>
+            <span class="logo-text">Lucky<span class="logo-accent">Step</span></span>
+          </a>
+          <p class="footer-motto" data-i18n="footer_motto">
+            “Every step forward to self-growth.” Helping conscious walkers hit daily movement goals and learn through tailored routes.
+          </p>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading" data-i18n="footer_links_title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#about" data-i18n="nav_about">About Concept</a></li>
+            <li><a href="#planner" data-i18n="nav_planner">Route Planner</a></li>
+            <li><a href="#features" data-i18n="nav_features">Features</a></li>
+            <li><a href="#health" data-i18n="nav_health">Health Benefits</a></li>
+            <li><a href="#podcasts" data-i18n="nav_podcasts">Curated Podcasts</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col">
+          <h4 class="footer-heading" data-i18n="footer_science_title">Transparency</h4>
+          <ul class="footer-links">
+            <li><a href="#about">Stride Length Science</a></li>
+            <li><a href="#health">NEAT &amp; Zone 2 Research</a></li>
+            <li><a href="#contact">Methodology &amp; FAQ</a></li>
+            <li><a href="#contact">Contact Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-nav-col newsletter-col">
+          <h4 class="footer-heading" data-i18n="footer_digest_title">Weekly Walkers Digest</h4>
+          <p class="newsletter-desc" data-i18n="footer_digest_desc">Fresh walking routes, cognitive podcasts, and longevity tips every Sunday.</p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed! Welcome to the Lucky Step Community.');">
+            <input type="email" placeholder="Enter your email" required class="form-control newsletter-input">
+            <button type="submit" class="btn btn-primary btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; <span id="currentYear">2026</span> Lucky Step. All rights reserved. Made for mindful movers.
+        </p>
+        <p class="footer-medical-disclaimer" data-i18n="footer_disclaimer">
+          Disclaimer: Lucky Step provides calculated estimates for educational and recreational walking planning. Exact step counts vary by individual stride length and terrain. Always consult a medical professional before starting any intensive fitness regimen.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
